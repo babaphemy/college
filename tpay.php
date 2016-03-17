@@ -63,27 +63,10 @@
         
               <h1>Webpay Test</h1>
                 <?php 
-				/* $myparams = array();
-				$myparams['subpdtid'] = 6259 ;
-				$myparams['submittedref'] = $_SESSION['genref'] ;
-				$myparams['submittedamt'] = $_SESSION['amt4hash'] ;
-				$myparams['rettxref'] = $_POST['txnref'] ;
-				$myparams['retpayRef'] = $_POST['payRef'] ;
-				$myparams['retretref'] = $_POST['retRef'] ;
-				$myparams['retcardnum'] = $_POST['cardNum'] ;
-				$myparams['retappramt'] = $_POST['apprAmt'] ;
-				$myparams['nhash'] = 'B86327F372D8F236238E11044E1C57EC93FA6BAFB7C3146556DF7BD98016F7B461E3DAAE37FB2C8FF114EA40921D9C1EB5E7B21837215DA6E744831A9F6F35F4' ;
-				 */
-							
-				
 				$subpdtid = 6207; // your product ID
 				$submittedref = $_SESSION['genref'] ; // unique ref I generated for the trans
 				$submittedamt = $_SESSION['amt4hash'] ;
-				//$rettxref= $_POST['txnref']; // ref from isw
-				//$retpayRef=$_POST['payRef'];  // pay ref from isw
-				//$retretref = $_POST['retRef'];  // ret ref from isw
-				//$retcardnum = $_POST['cardNum'];  // ret cardnum from isw
-				//$retappramt = $_POST['apprAmt'];  // ret appr amt from isw
+			
 				
 	$nhash = "CEF793CBBE838AA0CBB29B74D571113B4EA6586D3BA77E7CFA0B95E278364EFC4526ED7BD255A366CDDE11F1F607F0F844B09D93B16F7CFE87563B2272007AB3" ; // the mac key sent to you
 	$hashv = $subpdtid.$submittedref.$nhash;  // concatenate the strings for hash again
@@ -98,7 +81,7 @@
 	$ponmo = http_build_query($parami) . "\n";
 		
 		//$url = "https://stageserv.interswitchng.com/test_paydirect/api/v1/gettransaction.xml?$ponmo";// xml
-		$url = "http://stageserv.interswitchng.com/test_paydirect/api/v1/gettransaction.json?$ponmo"; // json
+		$url = "https://stageserv.interswitchng.com/test_paydirect/api/v1/gettransaction.json?$ponmo"; // json
 	  
 		//note the variables appended to the url as get values for these parameters
 		$headers = array(
